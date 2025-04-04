@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="StudentApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #a1ffce 0%, #faffd1 100%);
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #00c9a7;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #009f87;
+        }
+    </style>
+</head>
+<body ng-controller="StudentController">
+    <div ng-show="!isLoggedIn">
+        <div class="container">
+            <h2>Login</h2>
+            <input type="text" ng-model="login.username" placeholder="Username">
+            <input type="password" ng-model="login.password" placeholder="Password">
+            <button ng-click="submitLogin()">Login</button>
+            <button ng-click="goToRegister()">Register</button>
+        </div>
+    </div>
+</body>
+</html>
